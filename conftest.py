@@ -18,11 +18,11 @@ def driver():
 def account_login(driver):
     driver.find_element(*Locators.REG_LOGIN_ACCOUNT).click()
     WebDriverWait(driver, 3).until(
-        expected_conditions.visibility_of_element_located((By.XPATH, './/h2[text()="Вход"]')))
+        expected_conditions.visibility_of_element_located((Locators.LOGIN_LABEL)))
     driver.find_element(*Locators.EMAIL).send_keys(
         'ekaterina_beloborodova_10_456@ya.ru')
     driver.find_element(*Locators.PASSWORD).send_keys('1234567')
     driver.find_element(*Locators.REG_LOGIN).click()
     WebDriverWait(driver, 3).until(
-        expected_conditions.visibility_of_element_located((By.XPATH, './/h1[text()="Соберите бургер"]')))
+        expected_conditions.visibility_of_element_located((Locators.BURGER_CONSTR)))
     return driver

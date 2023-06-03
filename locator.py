@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+
 class Locators:
     REG_LOGIN_ACCOUNT = (By.XPATH, './/button[text()="Войти в аккаунт"]') #кнопка войти в аккаунт
     REG_LK = (By.XPATH, './/p[text()="Личный Кабинет"]') #кнопка входа в личный кабине
