@@ -9,10 +9,10 @@ class TestLogout:
     def test_logout(self, account_login):
         driver = account_login
         WebDriverWait(driver, 3).until(
-            expected_conditions.visibility_of_element_located((By.XPATH, './/h1[text()="Соберите бургер"]')))
+            expected_conditions.visibility_of_element_located((Locators.BURGER_CONSTR)))
         driver.find_element(*Locators.REG_LK).click()
         WebDriverWait(driver, 3).until(
-            expected_conditions.visibility_of_element_located((By.XPATH, './/label[text()="Имя"]')))
+            expected_conditions.visibility_of_element_located((Locators.NAME)))
         driver.find_element(*Locators.REG_LOGOUT).click()
-        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, './/h2[text()="Вход"]')))
+        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((Locators.LOGIN_LABEL)))
         assert driver.current_url == 'https://stellarburgers.nomoreparties.site/login'

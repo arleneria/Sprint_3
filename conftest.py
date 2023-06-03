@@ -26,7 +26,3 @@ def account_login(driver):
     WebDriverWait(driver, 3).until(
         expected_conditions.visibility_of_element_located((By.XPATH, './/h1[text()="Соберите бургер"]')))
     return driver
-
-
-
-
